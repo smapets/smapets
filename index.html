@@ -1,0 +1,140 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"
+      integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="index.js" defer></script>
+    <title>TETRISMath</title>
+  </head>
+  <body>
+    <div id="primary-content" class="primary-content">
+      <div class="sf-background">
+        <div id="sf-background-fog" class="sf-background-fog-bottom">
+          <audio
+            autoplay
+            loop
+            id="gameMenu"
+            src="Game-Menu_Looping.mp3"
+            type="audio/mpeg"
+          ></audio>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12"></div>
+            <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
+              <div class="row sf-user-data">
+                <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12"></div>
+                <div
+                  class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12 sf-clock"
+                >
+                  <i class="far fa-clock"></i>
+                  <div class="sf-time-and-day">
+                    <h4 id="time-display">11:01</h4>
+                    <h6 id="day-display">WEDNESDAY</h6>
+                  </div>
+                  <img
+                    class="sf-user-profile-image"
+                    src="https://assets.codepen.io/2940219/image-4.png"
+                  />
+                  <h5 class="sf-username">Guest Player</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="row sf-focal-point">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"></div>
+            <div
+              class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"
+              style="padding: 0"
+            >
+              <div class="col-12 sf-clan-area">
+                <div class="sf-logo-area">
+                  <img
+                    class="sf-clan-logo"
+                    src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2940219/Wolf.png"
+                  />
+                  <img
+                    id="loading-image"
+                    data-progress="0"
+                    class="sf-clan-logo-loading"
+                    src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2940219/Wolf%20(GREEN).png"
+                  />
+                </div>
+                <h6>Learn Math Playing</h6>
+                <h4>TETRISMath</h4>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"></div>
+          </div>
+        </div>
+        <div class="col-12 sf-menu-system">
+          <ul class="sf-menu">
+            <li onclick="openSFModal('map-modal');">HIGHEST SCORE</li>
+            <li onclick="openSFModal('match-info-modal');">RULES</li>
+            <li onclick="openSFModal('settings-modal');">SETTINGS</li>
+            <li onclick="openSFModal('operation-modal');">
+              CHOOSE MATH OPERATION
+            </li>
+            <li onclick="redirect()">NEW GAME</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="main-modal" class="sf-modal-container">
+      <div id="map-modal" class="sf-modal">
+        <h3>Highest Score</h3>
+        <p id="record"></p>
+      </div>
+      <div id="match-info-modal" class="sf-modal">
+        <h3>MathTetris</h3>
+        <p>
+          All you need to do is drop the block at the square that displays the
+          correct result of the calculation at the top right of the screen
+        </p>
+      </div>
+      <div id="settings-modal" class="sf-modal">
+        <h3>SETTINGS</h3>
+        <span>Difficulty:</span>
+        <input
+          class="sf-slider"
+          type="range"
+          id="left-red"
+          max="20"
+          min="6"
+          step="2"
+        />
+        <span>Time:</span>
+        <input
+          class="sf-slider"
+          type="range"
+          id="time"
+          max="200"
+          min="50"
+          step="25"
+        />
+      </div>
+      <div id="operation-modal" class="sf-modal">
+        <h3>CHOOSE ARITHMETIC OPERATION</h3>
+        <label for="operation">Choose an operation:</label>
+
+        <select name="operation" id="operation">
+          <option value="addition">Addition</option>
+          <option value="subtraction">Subtraction</option>
+          <option value="division">Calculate modulus</option>
+        </select>
+      </div>
+      <div class="sf-modal-close-button" onclick="closeSettings();">BACK</div>
+    </div>
+  </body>
+</html>
