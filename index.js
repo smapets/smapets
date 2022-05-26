@@ -2,12 +2,6 @@ var progressImage = document.getElementById("loading-image");
 window.scrollTo(0, 300);
 // Used for visual effects on mouse movement.
 document.body.addEventListener("mousemove", updateMouseCoordinates);
-// let sound = new Howl({
-//   src: ["./Game-Menu_Looping.mp3"],
-//   autoplay: true,
-//   loop: true,
-//   volume: 0.5,
-// });
 
 var mouseX = 0;
 var mouseY = 0;
